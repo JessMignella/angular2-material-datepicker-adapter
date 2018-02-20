@@ -258,7 +258,7 @@ import { Calendar } from './calendar';
             class="datepicker__calendar__cancel"
             (click)="onCancel()"
           >
-            Cancel
+            Cancelar
           </div>
         </div>
       </div>
@@ -432,7 +432,7 @@ export class DatepickerComponent implements OnInit, OnChanges {
     }
 
     let newDate = new Date(newYear, newMonth);
-    if (!this.rangeStart || newDate.getTime() >= this.rangeStart.getTime()) {
+    if (!this.rangeStart || newDate.getTime() >=  new Date( this.rangeStart.getFullYear(), this.rangeStart.getMonth()).getTime()) {
       this.currentYear = newYear;
       this.currentMonthNumber = newMonth;
       this.setCurrentMonth(newMonth);
